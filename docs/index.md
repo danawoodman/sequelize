@@ -16,7 +16,7 @@ more.
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('database', 'username', 'password');
 
-const User = sequelize.define('user', {
+const User = sequelize.define('User', {
   username: Sequelize.STRING,
   birthday: Sequelize.DATE
 });

@@ -4,7 +4,7 @@ While out of the box Sequelize will seem a bit opinionated it's trivial to both 
 
 ## Tables
 ```js
-sequelize.define('user', {
+sequelize.define('User', {
 
 }, {
   tableName: 'users'
@@ -13,7 +13,7 @@ sequelize.define('user', {
 
 ## Fields
 ```js
-sequelize.define('modelName', {
+sequelize.define('ModelName', {
   userId: {
     type: Sequelize.INTEGER,
     field: 'user_id'
@@ -27,7 +27,7 @@ Sequelize will assume your table has a `id` primary key property by default.
 To define your own primary key:
 
 ```js
-sequelize.define('collection', {
+sequelize.define('Collection', {
   uid: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -35,7 +35,7 @@ sequelize.define('collection', {
   }
 });
 
-sequelize.define('collection', {
+sequelize.define('Collection', {
   uuid: {
     type: Sequelize.UUID,
     primaryKey: true
@@ -56,6 +56,6 @@ Project.hasMany(Task, {foreignkey: 'tasks_pk'});
 Task.belongsTo(Project, {foreignKey: 'tasks_pk'});
 
 // N:M
-User.hasMany(Role, {through: 'user_has_roles', foreignKey: 'user_role_user_id'});
-Role.hasMany(User, {through: 'user_has_roles', foreignKey: 'roles_identifier'});
+User.hasMany(Role, {through: 'UserRole', foreignKey: 'user_role_user_id'});
+Role.hasMany(User, {through: 'UserRole', foreignKey: 'roles_identifier'});
 ```

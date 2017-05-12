@@ -48,7 +48,7 @@ There are currently three ways to programmatically add hooks:
 
 ```js
 // Method 1 via the .define() method
-const User = sequelize.define('user', {
+const User = sequelize.define('User', {
   username: DataTypes.STRING,
   mood: {
     type: DataTypes.ENUM,
@@ -91,7 +91,7 @@ User.afterValidate('myHookAfter', (user, options, fn) => {
 Only a hook with name param can be removed.
 
 ```js
-const Book = sequelize.define('book', {
+const Book = sequelize.define('Book', {
   title: DataTypes.STRING
 });
 
@@ -121,8 +121,8 @@ const sequelize = new Sequelize(..., {
 This adds a default hook to all models, which is run if the model does not define its own `beforeCreate` hook:
 
 ```js
-const User = sequelize.define('user');
-const Project = sequelize.define('project', {}, {
+const User = sequelize.define('User');
+const Project = sequelize.define('Project', {}, {
     hooks: {
         beforeCreate: () => {
             // Do other stuff
@@ -145,8 +145,8 @@ This hooks is always run before create, regardless of whether the model specifie
 
 
 ```js
-const User = sequelize.define('user');
-const Project = sequelize.define('project', {}, {
+const User = sequelize.define('User');
+const Project = sequelize.define('Project', {}, {
     hooks: {
         beforeCreate: () => {
             // Do other stuff
@@ -274,11 +274,11 @@ For the most part hooks will work the same for instances when being associated e
 2. The only way to call beforeDestroy/afterDestroy hooks are on associations with `onDelete: 'cascade'` and the option `hooks: true`. For instance:
 
 ```js
-const Projects = sequelize.define('projects', {
+const Projects = sequelize.define('Projects', {
   title: DataTypes.STRING
 });
 
-const Tasks = sequelize.define('tasks', {
+const Tasks = sequelize.define('Tasks', {
   title: DataTypes.STRING
 });
 

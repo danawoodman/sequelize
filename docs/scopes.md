@@ -6,7 +6,7 @@ Scoping allows you to define commonly used queries that you can easily use later
 Scopes are defined in the model definition and can be finder objects, or functions returning finder objects - except for the default scope, which can only be an object:
 
 ```js
-const Project = sequelize.define('project', {
+const Project = sequelize.define('Project', {
   // Attributes
 }, {
   defaultScope: {
@@ -198,7 +198,7 @@ User.getPosts({ scope: ['scope1', 'scope2']});
 If you want to create a shortcut method to a scope on an associated model, you can pass the scoped model to the association. Consider a shortcut to get all deleted posts for a user:
 
 ```js
-const Post = sequelize.define('post', attributes, {
+const Post = sequelize.define('Post', attributes, {
   defaultScope: {
     where: {
       active: true

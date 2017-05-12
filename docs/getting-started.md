@@ -66,10 +66,10 @@ sequelize
 
 ## Your first model
 
-Models are defined with `sequelize.define('name', {attributes}, {options})`.
+Models are defined with `sequelize.define('Name', {attributes}, {options})`.
 
 ```js
-const User = sequelize.define('user', {
+const User = sequelize.define('User', {
   firstName: {
     type: Sequelize.STRING
   },
@@ -111,8 +111,8 @@ const sequelize = new Sequelize('connectionUri', {
   }
 });
 
-const User = sequelize.define('user', {}); // timestamps is false by default
-const Post = sequelize.define('post', {}, {
+const User = sequelize.define('User', {}); // timestamps is false by default
+const Post = sequelize.define('Post', {}, {
   timestamps: true // timestamps will now be true
 });
 ```
